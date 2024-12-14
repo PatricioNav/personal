@@ -1,7 +1,7 @@
 import streamlit as st
 st.sidebar.title("MENU")
 app_mode = st.sidebar.selectbox('Selecciona Página',['Portada','Controles'])
-st.sidebar.image("logocasagrande.jpg") #two pages
+# st.sidebar.image("logocasagrande.jpg") #two pages
 if app_mode=='Portada':   
 	st.balloons()
 	st.title('Mi Primera Aplicación en Streamlit')
