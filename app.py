@@ -1,6 +1,8 @@
 import streamlit as st
+import numpy as np
+import pandas as pd
 st.sidebar.title("MENU")
-app_mode = st.sidebar.selectbox('Selecciona Página',['Portada','Controles'])
+app_mode = st.sidebar.selectbox('Selecciona Página',['Portada','Controles','Grafica'])
 # st.sidebar.image("logocasagrande.jpg") #two pages
 if app_mode=='Portada':   
 	st.balloons()
@@ -19,5 +21,12 @@ if app_mode=='Controles':
 	st.file_uploader('Cargar archivo')
 	st.date_input('Selecciona una fecha')
 	st.time_input('Selecciona una hora')
+	# st.feedback('stars')
 	st.button('Enviar')
-
+if app_mode=='Grafica': 
+	st.title("Gráfico de lineas")
+	primer_parcial=[10, 9, 8, 5, 9, 9, 10, 8, 9, 7, 10, 6, 8, 9, 10]
+	segundo_parcial=[10, 8, 9, 6, 10, 10, 9, 10, 8, 9, 10, 8, 6, 10, 2]
+	df=pd.DataFrame({"Nota_1":primer_parcial, "Nota_2":segundo_parcial})
+	st.line_chart(df)
+	df
